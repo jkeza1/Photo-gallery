@@ -1,53 +1,65 @@
 document.addEventListener("DOMContentLoaded", () => {
     const images = [
-        { src: "https://source.unsplash.com/random/800x600?sig=1", title: "FENNEC FOX", subtitle: "India" },
-        { src: "https://source.unsplash.com/random/800x600?sig=2", title: "HUMPBACK WHALE", subtitle: "South Africa" },
-        { src: "https://source.unsplash.com/random/800x600?sig=3", title: "COMMON BROWN BABOON", subtitle: "South Africa" },
-        { src: "https://source.unsplash.com/random/800x600?sig=4", title: "SPOTTED DEER", subtitle: "Amazon" }
+        {
+            src: 'fennex fox.jpeg',
+            title: 'Fennec Fox',
+            location: 'India'
+        },
+        {
+            src: 'humpback-whale.jpg',
+            title: 'Humpback Whale',
+            location: 'South Africa'
+        },
+        {
+            src: 'baboon image.jpeg',
+            title: 'Common Brown Baboon',
+            location: 'South Africa'
+        },
+        {
+            src: 'spotted deer.jpeg',
+            title: 'Spotted Deer',
+            location: 'Amazon'
+        }
     ];
 
-    const gallery = document.querySelector(".gallery");
+    function createGallery() {
+        const gallery = document.querySelector('.gallery');
 
-    // Dynamically create and append image elements with overlays
-    images.forEach(image => {
-        const item = document.createElement("div");
-        item.className = "gallery-item";
+        images.forEach(image => {
+            const item = document.createElement("div");
+            item.className = "gallery-item";
 
-        const img = document.createElement("img");
-        img.src = image.src;
-        img.alt = image.title;
+            const img = document.createElement("img");
+            img.src = image.src;
+            img.alt = image.title;
 
-        const overlay = document.createElement("div");
-        overlay.className = "overlay";
+            const overlay = document.createElement("div");
+            overlay.className = "overlay";
 
-        const title = document.createElement("h3");
-        title.textContent = image.title;
+            const text = document.createElement("div");
+            text.className = "text";
 
-        const subtitle = document.createElement("p");
-        subtitle.textContent = image.subtitle;
+            const title = document.createElement("h3");
+            title.textContent = image.title;
 
-        const moreInfo = document.createElement("div");
-        moreInfo.className = "more-info";
+            const location = document.createElement("p");
+            location.textContent = image.location;
 
-        const link = document.createElement("a");
-        link.href = "#";
-        link.textContent = "Know more →";
-        link.className="text-link";
-        const imageinfo= document.createElement("div")
-        imageinfo.className= "imageinfo";
+            const link = document.createElement("span");
+            link.textContent = "Know more →";
+            link.className = "text-link";
 
-        moreInfo.appendChild(link);
-        
+            text.appendChild(title);
+            text.appendChild(location);
+            text.appendChild(link);
 
-        imageinfo.appendChild(title);
-        imageinfo.appendChild(subtitle);
-        imageinfo.appendChild(moreInfo);
-        item.appendChild(imageinfo);
+            overlay.appendChild(text);
+            item.appendChild(img);
+            item.appendChild(overlay);
 
-        item.appendChild(img);
-        item.appendChild(overlay);
+            gallery.appendChild(item);
+        });
+    }
 
-        gallery.appendChild(item);
-    });
+    createGallery();
 });
-
