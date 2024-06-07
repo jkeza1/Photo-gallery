@@ -28,12 +28,16 @@ body {
     justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
+    height:100vh;
+    width: auto;
 }
 
 .gallery-item {
     position: relative;
     width: 200px;
     height: 300px;
+    display: inline-block;
+    margin: 8px;
     cursor: pointer;
     overflow: hidden;
     border-radius: 8px;
@@ -78,7 +82,7 @@ body {
 
 .overlay p {
     font-size: 0.8em;
-    opacity: 0.8;
+    opacity: 1;
 }
 
 .overlay .more-info {
@@ -97,4 +101,17 @@ body {
 
 .overlay .more-info a:hover {
     text-decoration: underline;
+}
+.text-link {
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+}
+.overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
 }
