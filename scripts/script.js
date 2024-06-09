@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
             location: 'South Africa'
         },
         {
-            src: 'baboon image.jpeg',
+            src: 'baboonnn.jpeg',
             title: 'Common Brown Baboon',
             location: 'South Africa'
         },
