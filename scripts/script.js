@@ -51,9 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             text.appendChild(title);
             text.appendChild(location);
-            text.appendChild(link);
+            item.appendChild(link);
 
-            overlay.appendChild(text);
+            item.appendChild(text);
             item.appendChild(img);
             item.appendChild(overlay);
 
